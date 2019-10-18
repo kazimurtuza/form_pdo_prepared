@@ -48,3 +48,34 @@ catch(PDOException $e)
 
 
 ?>
+
+<!-- paramiter pass -->
+<?php 
+$sqq="SELECT * FROM form_tb WHERE id= :id && name= :name";
+$realulta=$conn->prepare($sqq);
+
+// $realulta->bindParam(':id',$id);
+// $realulta->bindParam(':sallary',$sallary);
+// $id= 66;
+// $sallary=19992;
+
+$realulta->execute([':id'=>66,':name'=>'kazimurtuza']);
+$row=$realulta->fetch(PDO::FETCH_ASSOC);
+echo $row['name'];
+
+?>
+
+
+
+
+
+
+
+
+<?php 
+// close prepared statement
+unset($result);
+
+// close connection
+$conn=null;
+?>
