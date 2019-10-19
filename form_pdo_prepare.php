@@ -210,7 +210,6 @@ $resultch->bindParam(':id',$id,PDO::PARAM_INT);
   $sallary=$_REQUEST['sallary'];
   $id=$_REQUEST['id'];
   $resultch->execute();
-  
 }
 }
 catch(PDOException $e)
@@ -284,14 +283,6 @@ if(isset($_REQUEST['insert']))
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
 
 <?php 
 
