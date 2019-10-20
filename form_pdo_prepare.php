@@ -1,3 +1,48 @@
+<?php 
+// //////////////////////create cooke//////////////
+setCookie("cokname","murtuza",time()+60*60*24*10);
+
+// ///////////////////get cooke value ////////////////////
+echo $_COOKIE['cokname'];
+
+// ///////////replace cookie when name same////////
+ setcookie("cokname","myform");
+
+// //////////// add new cookie change name //////
+ setcookie("newcooke","myform");
+
+// ////////////delete cookie/////////////////
+ setCookie("cokname","myform",time()-3600);
+
+//////////////////////////////////##### session part #####//////////////////////////////////////
+
+// /////////////seson create//////////////////
+
+session_start();
+
+//////// session variable create //////////
+
+$_SESSION['username']='kazimurtuza';
+$password=4321;
+$_SESSION['password']=$password;
+
+//////////session access/////////////
+
+echo "USER NAME =".$_SESSION['username']."<br/>";
+echo "password =".$_SESSION['password'];
+
+////////usset session///////////
+unset($_SESSION['username']);
+////////////all unset/////////
+session_unset();
+//////////// session destroy mins file destroy///////
+
+session_destroy();
+?>
+
+
+
+
 <!-- -----------------batabase connection ---------------------->
 <?php  
   $src="mysql:host=localhost;dbname=form_db";
@@ -284,8 +329,10 @@ if(isset($_REQUEST['insert']))
   </body>
 </html>
 
-<?php 
 
+
+
+<?php 
 
 // close connection
 $conn=null;
